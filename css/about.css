@@ -111,7 +111,7 @@ img {
 
 .story__visual-label {
   color: var(--color-danger); /* stand-in pink for placeholder text */
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-weight: var(--weight-bold);
   font-size: var(--scale-lg);
   letter-spacing: var(--ls-en-label);
@@ -282,7 +282,7 @@ img {
 
 .vision__label {
   display: block;
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-size: var(--scale-lg);
   font-weight: var(--weight-bold);
   letter-spacing: 0.08em;

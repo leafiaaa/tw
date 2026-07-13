@@ -36,7 +36,7 @@ section {
   text-align: center;
 }
 .main__title {
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-weight: var(--weight-semibold);
   font-size: var(--scale-3xl);
   color: var(--color-ink);
@@ -44,7 +44,7 @@ section {
 }
 .main__heading {
   margin: 0 0 var(--space-4);
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-weight: var(--weight-semibold);
   font-size: var(--scale-2xl);
   color: var(--color-ink);
@@ -52,14 +52,14 @@ section {
 }
 .subheading {
   margin: 0 0 var(--space-6);
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-weight: var(--weight-semibold);
   font-size: var(--scale-lg);
   color: var(--color-ink);
 }
 .quote {
   color: var(--color-blue-disabled);
-  font-family: var(--font-tw), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
   font-weight: var(--weight-semibold);
   font-size: var(--scale-sm);
   font-style: italic;

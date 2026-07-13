@@ -22,7 +22,7 @@
 /* intro column */
 .cta__title {
   margin: 0 0 var(--space-5);
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-weight: var(--weight-medium);
   font-size: 39px;
   line-height: var(--lh-en-heading);
@@ -45,7 +45,7 @@
   border: 1.5px solid var(--color-surface);
   background: transparent;
   color: var(--color-surface);
-  font-family: var(--font-tw), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
   font-weight: var(--weight-semibold);
   font-size: var(--scale-sm);
   text-decoration: none;
@@ -79,7 +79,7 @@
 
 .cta__name {
   margin: 0 0 var(--space-1);
-  font-family: var(--font-tw), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
   font-weight: var(--weight-bold);
   font-size: var(--scale-base);
   color: var(--color-ink);
@@ -90,7 +90,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  font-family: var(--font-tw);
+  font-family: var(--font-tw), var(--font-en);
   font-size: var(--scale-sm);
   color: var(--color-ink-secondary);
   text-decoration: none;

@@ -6,6 +6,7 @@
 
 :root {
   --font-tw: "Noto Sans TC", sans-serif;
+  --font-en: "Montserrat", "Montserrat Fallback", sans-serif;
 
   /* --------------------------------------------------------------------------
      FONT SIZES
@@ -39,29 +40,28 @@
      LINE HEIGHTS
   -------------------------------------------------------------------------- */
 
-/* --------------------------------------------------------------------------
+  /* --------------------------------------------------------------------------
    LINE HEIGHTS (retuned for CJK / Noto Sans TC)
 -------------------------------------------------------------------------- */
---lh-display: 1.25;   /* was 1.05 */
---lh-heading: 1.4;    /* was 1.2 */
---lh-subhead: 1.5;    /* was 1.3 */
---lh-body: 1.75;      /* was 1.65 */
---lh-caption: 1.6;    /* was 1.5 */
---lh-label: 1.5;      /* was 1.4 */
+  --lh-display: 1.25; /* was 1.05 */
+  --lh-heading: 1.4; /* was 1.2 */
+  --lh-subhead: 1.5; /* was 1.3 */
+  --lh-body: 1.75; /* was 1.65 */
+  --lh-caption: 1.6; /* was 1.5 */
+  --lh-label: 1.5; /* was 1.4 */
 
-/* --------------------------------------------------------------------------
+  /* --------------------------------------------------------------------------
    LETTER SPACING (retuned for CJK / Noto Sans TC)
 -------------------------------------------------------------------------- */
---ls-display: 0em;     /* was -0.025em */
---ls-heading: 0em;     /* was -0.015em */
---ls-subhead: 0em;     /* was -0.01em */
---ls-body: 0.02em;     /* was 0em */
---ls-label: 0.08em;    /* was 0.06em */
---ls-caption: 0.02em;  /* was 0.01em */
+  --ls-display: 0em; /* was -0.025em */
+  --ls-heading: 0em; /* was -0.015em */
+  --ls-subhead: 0em; /* was -0.01em */
+  --ls-body: 0.02em; /* was 0em */
+  --ls-label: 0.08em; /* was 0.06em */
+  --ls-caption: 0.02em; /* was 0.01em */
 
   /* Feature Grid Spacing */
   --page-x: clamp(var(--space-6), 5vw, var(--space-16));
-
 
   /* --------------------------------------------------------------------------
      COLORS
