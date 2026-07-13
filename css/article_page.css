@@ -77,7 +77,7 @@ body:has(.article-page) {
   aspect-ratio: 21 / 9;
   border-radius: var(--radius-xl);
   color: var(--color-ink);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-bold);
   font-size: var(--scale-xl);
   margin-bottom: var(--space-8);
@@ -96,7 +96,7 @@ body:has(.article-page) {
 }
 .article-page__title {
   color: var(--color-ink);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   margin: 0 0 var(--space-4);
 }
 .article-page__meta {
@@ -141,13 +141,13 @@ body:has(.article-page) {
 }
 .article-page__content h2 {
   color: var(--color-ink);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   margin-top: var(--space-12);
   margin-bottom: 0;
 }
 .article-page__content h3 {
   color: var(--color-ink);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   margin-top: var(--space-8);
   margin-bottom: 0;
 }
@@ -313,7 +313,7 @@ body:has(.article-page) {
 .info-table th {
   background: var(--color-blue);
   color: var(--color-surface);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-semibold);
 }
 .info-table tbody tr:nth-child(even) {
@@ -374,7 +374,7 @@ body:has(.article-page) {
   border-radius: var(--radius-full);
   background: var(--color-blue);
   color: var(--color-surface);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-semibold);
   text-decoration: none;
   transition: background var(--transition-base);
@@ -393,7 +393,7 @@ body:has(.article-page) {
   background: var(--color-ink);
   color: var(--color-surface);
   text-decoration: none;
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-medium);
 }
 .video-link-icon {
@@ -485,7 +485,7 @@ body:has(.article-page) {
   border-radius: var(--radius-full);
   background: var(--color-blue);
   color: var(--color-surface);
-  font-family: var(--font-tw), var(--font-en);
+  font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-semibold);
   text-decoration: none;
   transition: background var(--transition-base);
