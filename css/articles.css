@@ -1,5 +1,6 @@
-.articles_cta__intro{
-align-content:center;}
+.articles_cta__intro {
+  align-content: center;
+}
 
 .articles__media {
   position: relative;
@@ -35,7 +36,7 @@ align-content:center;}
   border-radius: var(--radius-full);
   background: var(--color-blue);
   color: var(--color-surface);
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-weight: var(--weight-semibold);
   font-size: var(--scale-xs);
 }
@@ -67,9 +68,9 @@ align-content:center;}
   top: 70px;
   width: 100%;
   max-width: 260px;
-  min-height:200px;
-  max-height:200px;
-  filter: blur(1.5px); 
+  min-height: 200px;
+  max-height: 200px;
+  filter: blur(1.5px);
 }
 .bottom__card__left {
   left: 0;

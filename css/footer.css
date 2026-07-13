@@ -63,7 +63,7 @@
 
 .footer__phone {
   margin: 0;
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-weight: var(--weight-semibold);
   font-size: var(--scale-sm);
   color: var(--color-ink);
@@ -77,7 +77,7 @@
 
 .footer__heading {
   margin: 0 0 var(--space-4);
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-weight: var(--weight-bold);
   font-size: var(--scale-sm);
   color: var(--color-ink);
@@ -95,7 +95,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-size: var(--scale-sm);
   color: var(--color-ink-secondary);
   text-decoration: none;
@@ -132,7 +132,7 @@
   background: transparent;
   border: none;
   color: var(--color-surface);
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-weight: var(--weight-semibold);
   font-size: var(--scale-sm);
   cursor: pointer;
@@ -155,7 +155,7 @@
   padding: 0;
 }
 .footer__legal a {
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-size: var(--scale-xs);
   color: var(--color-surface);
   text-decoration: underline;
@@ -168,7 +168,7 @@
 .footer__copy {
   flex: 1 1 auto;
   margin: 0;
-  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-family: var(--font-tw), sans-serif;
   font-size: var(--scale-xs);
   line-height: var(--lh-en-body);
   color: color-mix(in srgb, var(--color-surface) 70%, transparent);

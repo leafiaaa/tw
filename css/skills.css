@@ -14,7 +14,7 @@
 }
 
 .modules-text {
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-size: var(--scale-base);
   letter-spacing: 0.05em;
 }
@@ -46,7 +46,7 @@
 }
 
 .bpm-module__heading {
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-size: var(--scale-xl);
   font-weight: var(--weight-medium);
   color: var(--color-blue);
@@ -162,7 +162,7 @@
 }
 
 .tech-group__heading {
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-size: var(--scale-xl);
   font-weight: var(--weight-semibold);
   color: var(--color-ink);
@@ -236,7 +236,7 @@
 }
 
 .tech-item__label {
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-size: var(--scale-base);
   font-weight: var(--weight-medium);
 }
@@ -315,7 +315,7 @@
 }
 
 .modules-text {
-  font-family: var(--font-en);
+  font-family: var(--font-tw);
   font-size: var(--scale-lg);
   letter-spacing: 0.05em;
 }
