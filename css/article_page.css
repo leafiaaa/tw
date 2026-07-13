@@ -433,7 +433,7 @@ body:has(.article-page) {
   color: var(--color-ink-secondary);
   font-size: var(--scale-sm);
   text-decoration: none;
-  line-height: var(--lh-en-body);
+  line-height: var(--lh-body);
 }
 .toc a:hover {
   color: var(--color-blue);

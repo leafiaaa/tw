@@ -24,8 +24,8 @@
   margin: 0 0 var(--space-5);
   font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-medium);
-  font-size: 39px;
-  line-height: var(--lh-en-heading);
+  font-size: 36px;
+  line-height: var(--lh-heading);
   color: var(--color-surface);
 }
 
