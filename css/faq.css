@@ -1,0 +1,84 @@
+/* ===========================
+   FAQ — reuses .tech-item / accordion.js as-is.
+   No new JS: this only restyles the existing .tech-item
+   markup when it's nested inside .faq (border moves from
+   left to top, icon becomes a plus/x instead of an arrow).
+=========================== */
+
+.faq {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Undo the left-border look, apply a top-border divider instead */
+.faq .tech-item {
+  border-left: none;
+  border-top: 2px solid var(--color-border);
+  padding-left: 0;
+}
+.faq .tech-item:last-child {
+  border-bottom: 2px solid var(--color-border);
+}
+.faq .tech-item.is-open {
+  border-top-color: var(--color-blue);
+}
+.faq .tech-item + .tech-item {
+  margin-top: 0;
+}
+
+.faq .tech-item__tab {
+  padding: var(--space-5) 0;
+  gap: var(--space-4);
+}
+
+.faq .tech-item__label {
+  font-size: var(--scale-base);
+  font-weight: var(--weight-semibold);
+}
+
+/* Swap the chevron for a circular plus that rotates into an "x" */
+.faq .tech-item__arrow svg {
+  display: none; /* hide the chevron markup, we draw a plus instead */
+}
+.faq .tech-item__arrow {
+  position: relative;
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-full);
+  background: var(--color-blue-subtle);
+}
+.faq .tech-item__arrow::before,
+.faq .tech-item__arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--color-blue);
+  transition: transform var(--transition-base);
+}
+.faq .tech-item__arrow::before {
+  width: var(--space-4);
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+.faq .tech-item__arrow::after {
+  width: 2px;
+  height: var(--space-4);
+  transform: translate(-50%, -50%);
+}
+.faq .tech-item.is-open .tech-item__arrow::after {
+  transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+}
+
+.faq .tech-item__detail p {
+  color: var(--color-ink-secondary);
+  font-size: var(--scale-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq .tech-item__arrow::before,
+  .faq .tech-item__arrow::after,
+  .faq .tech-item {
+    transition: none;
+  }
+}

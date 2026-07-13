@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--color-surface);
+}
+.content__margin {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6);
+}
+section {
+  margin-top: var(--space-2);
+}
+.two__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+.vertical__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  justify-content: center;
+}
+.section__subtitle {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--color-ink-secondary);
+  font-weight: var(--weight-regular);
+  font-size: var(--scale-base);
+}
+.paragraph__center {
+  text-align: center;
+}
+.main__title {
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  font-size: var(--scale-3xl);
+  color: var(--color-ink);
+  text-align: left;
+}
+.main__heading {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  font-size: var(--scale-2xl);
+  color: var(--color-ink);
+  text-align: center;
+}
+.subheading {
+  margin: 0 0 var(--space-6);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  font-size: var(--scale-lg);
+  color: var(--color-ink);
+}
+.quote {
+  color: var(--color-blue-disabled);
+  font-family: var(--font-en), var(--font-tw), var(--font-th), sans-serif;
+  font-weight: var(--weight-semibold);
+  font-size: var(--scale-sm);
+  font-style: italic;
+}
+
+.card {
+  background: linear-gradient(173deg, #e6f1fd 5%, #ffffff 40%);
+  border-top: 12px solid var(--color-blue);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+  gap: var(--space-4);
+
+  width: 100%;
+}
+@media (max-width: 950px) {
+  .two__grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Force text-before-image order on mobile for the
+     "Accelerated Workforce Productivity" block, where the image
+     comes first in the HTML (desktop layout puts image on the left) */
+  .right__side {
+    order: 1;
+  }
+  .challenge__media.reveal--left {
+    order: 2;
+  }
+}
+
+.video-facade {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+}
+.video-facade__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+.video-facade:hover .video-facade__play {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: var(--z-modal);
+  padding: var(--space-6);
+}
+.video-modal.is-open {
+  display: flex;
+}
+.video-modal__frame-wrap {
+  width: min(92vw, calc(88vh * var(--modal-ratio-num, 1.7778)));
+  max-width: 1400px;
+  aspect-ratio: var(--modal-ratio, 16 / 9);
+  position: relative;
+}
+
+.video-modal__frame-target {
+  position: absolute;
+  inset: 0; /* NEW — makes it fill the wrap */
+}
+
+.video-modal__frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius-lg);
+}
+.video-modal__close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-surface);
+  font-size: var(--scale-xl);
+  cursor: pointer;
+}

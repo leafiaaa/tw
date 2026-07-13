@@ -1,0 +1,531 @@
+/* ===== Article Page (page shell / layout) =====
+   Layout-only rules for the article page. Reusable content components
+   (infobox, quote, table, checklist, CTA buttons, TOC, share, etc.) live
+   in content_blocks.css — include that file alongside this one. */
+
+html:has(.article-page),
+body:has(.article-page) {
+  /* overflow-x: hidden; */
+  max-width: 100%;
+}
+
+.article-page,
+.article-page *,
+.article-page *::before,
+.article-page *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.content-block__table-wrap,
+.content-block__table-wrap * {
+  max-width: none;
+}
+
+.article-page__content,
+.article-page__content p,
+.article-page__content a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.article-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-20);
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+}
+
+.links{
+    color: var(--color-blue);
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+}
+.links:hover{
+    color: var(--color-blue-hover);
+    text-decoration: underline;
+}
+.links:active{
+    color: var(--color-blue-active);
+}
+/* Breadcrumb */
+.article-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  color: var(--color-ink-tertiary);
+}
+.article-page__breadcrumb a {
+  color: var(--color-ink-tertiary);
+  text-decoration: none;
+}
+.article-page__breadcrumb a:hover {
+  color: var(--color-blue);
+}
+.article-page__breadcrumb [aria-current="page"] {
+  color: var(--color-ink-secondary);
+}
+
+/* Banner */
+.article-page__banner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--radius-xl);
+  color: var(--color-ink);
+  font-family: var(--font-en);
+  font-weight: var(--weight-bold);
+  font-size: var(--scale-xl);
+  margin-bottom: var(--space-8);
+}
+.article-page__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Header */
+.article-page__header {
+  max-width: 900px;
+  margin: 0 0 var(--space-10);
+}
+.article-page__title {
+  color: var(--color-ink);
+  font-family: var(--font-en);
+  margin: 0 0 var(--space-4);
+}
+.article-page__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.article-page__tag {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--color-blue-subtle);
+  color: var(--color-blue);
+}
+.article-page__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-ink-tertiary);
+}
+.article-page__date,
+.article-page__read {
+  color: var(--color-ink-tertiary);
+}
+
+/* Layout: content + sticky sidebar */
+.article-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  top:0;
+}
+
+/* Content */
+.article-page__content {
+  color: var(--color-ink);
+  max-width: 780px;
+  min-width: 0;
+}
+.article-page__content > * + * {
+  margin-top: var(--space-5);
+}
+.article-page__content h2 {
+  color: var(--color-ink);
+  font-family: var(--font-en);
+  margin-top: var(--space-12);
+  margin-bottom: 0;
+}
+.article-page__content h3 {
+  color: var(--color-ink);
+  font-family: var(--font-en);
+  margin-top: var(--space-8);
+  margin-bottom: 0;
+}
+.article-page__content p {
+  color: var(--color-ink-secondary);
+}
+.article-page__content strong {
+  color: var(--color-ink);
+}
+
+/* ===== Sidebar container ===== */
+.article-page__aside {
+  position: sticky;
+  top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+  padding-top: var(--space-10);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .article-page {
+    padding: var(--space-6) var(--space-4) var(--space-16);
+  }
+
+  .article-page__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .article-page__content {
+    max-width: 100%;
+  }
+
+  .article-page__aside {
+    position: static;
+    top: auto;
+    order: -1;
+  }
+
+  .article-page__header {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-page {
+    padding: var(--space-5) var(--space-3) var(--space-12);
+  }
+
+  .article-page__breadcrumb {
+    flex-wrap: wrap;
+    row-gap: var(--space-1);
+  }
+
+  .article-page__banner {
+    aspect-ratio: 21/ 9;
+    border-radius: var(--radius-lg);
+  }
+
+  .article-page__meta {
+    flex-wrap: wrap;
+    row-gap: var(--space-1);
+  }
+}
+
+/* ELEMENTS */
+/* ===== Content Blocks (reusable) =====
+   Generic content components — usable inside any page, not just
+   .article-page. Plain, short class names (.quote, .highlight,
+   .info-table, etc.) so they're easy to reach for in markup. */
+
+.date-table,
+.toc a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Info box (event details, callouts) */
+.highlight {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-blue-subtle);
+  border: 1px solid var(--color-blue-muted);
+}
+.highlight-title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-ink);
+}
+.date-table {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-ink-secondary);
+}
+.highlight-note {
+  margin: 0;
+  color: var(--color-ink-tertiary);
+  font-style: italic;
+}
+
+/* Media placeholder (image / video block) */
+.media img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+  object-fit: cover;
+}
+.media--video {
+  background: color-mix(in srgb, var(--color-ink) 90%, transparent);
+  color: var(--color-surface);
+}
+.video-media {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  border: 0;
+  display: block;
+}
+
+/* Quote */
+.quote {
+  margin: 0;
+  padding: var(--space-5) var(--space-6);
+  border-left: 4px solid var(--color-blue);
+  background: var(--color-surface-raised);
+  color: var(--color-ink);
+  font-style: italic;
+}
+
+/* Tables */
+.info-table-wrap {
+    overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.info-table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 640px; 
+  border-collapse: collapse;
+  font-size: var(--scale-sm);
+}
+.info-table th,
+.info-table td {
+  padding: var(--space-3) var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+.info-table th {
+  background: var(--color-blue);
+  color: var(--color-surface);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+}
+.info-table tbody tr:nth-child(even) {
+  background: var(--color-surface-raised);
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.checklist li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-ink-secondary);
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background: var(--color-blue);
+}
+.checklist li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.3em;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid var(--color-surface);
+  border-bottom: 2px solid var(--color-surface);
+  transform: rotate(-45deg);
+}
+
+/* Feature title / value label (used above checklists inside content) */
+.heading {
+  color: var(--color-blue) !important;
+}
+.label {
+  margin-top: var(--space-4) !important;
+  /* margin-bottom: calc(-1 * var(--space-2)); */
+}
+
+/* Inline CTA button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  background: var(--color-blue);
+  color: var(--color-surface);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+.cta-button:hover {
+  background: var(--color-blue-hover);
+}
+
+/* TikTok / video link card */
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  text-decoration: none;
+  font-family: var(--font-en);
+  font-weight: var(--weight-medium);
+}
+.video-link-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--scale-xs);
+}
+
+/* ===== Sidebar widgets ===== */
+.toc,
+.share,
+.cta-box {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+}
+
+.toc-label {
+  margin: 0 0 var(--space-3);
+  color: var(--color-ink-tertiary);
+}
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.toc a {
+  color: var(--color-ink-secondary);
+  font-size: var(--scale-sm);
+  text-decoration: none;
+  line-height: var(--lh-en-body);
+}
+.toc a:hover {
+  color: var(--color-blue);
+}
+
+.share-row {
+  display: flex;
+  gap: var(--space-3);
+}
+.share-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base);
+}
+.share-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.share-btn:hover {
+  background: var(--color-blue);
+  color: var(--color-surface);
+  border-color: var(--color-blue);
+}
+
+.cta-box p.text-h4 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-ink);
+}
+.cta-box p.text-body {
+  margin: 0 0 var(--space-4);
+  color: var(--color-ink-secondary);
+}
+.cta-box-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-blue);
+  color: var(--color-surface);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+.cta-box-btn:hover {
+  background: var(--color-blue-hover);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .media img {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlight,
+  .toc,
+  .share,
+  .cta-box {
+    padding: var(--space-4);
+  }
+
+  .info-table {
+    font-size: var(--scale-xs);
+  }
+  .info-table th,
+  .info-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .cta-button,
+  .video-link {
+    width: 100%;
+    justify-content: center;
+  }
+  .media img {
+    max-width: 100%;
+  }
+}

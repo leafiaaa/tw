@@ -1,0 +1,514 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Safety net so any image without its own sizing rule never overflows
+   its container on narrow screens. More specific rules below (e.g.
+   .story__visual img, .vision__mascot) override this as needed. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+.story-intro {
+  padding-block: var(--space-16) var(--space-8);
+  padding-inline: var(--page-x);
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+  position: relative;
+}
+.story-intro__heading {
+  margin-bottom: var(--space-8);
+  line-height: 1.15;
+}
+
+.story-intro__heading-line {
+  display: block;
+  font-size: var(--scale-4xl);
+  font-weight: var(--weight-bold);
+}
+
+.story-intro__heading-line--solid {
+  color: #14529b;
+}
+
+.story-intro__heading-line--gradient {
+  background: linear-gradient(177deg, #005cd3 0%, #70a4d5 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.story-intro__sparkle {
+  position: absolute;
+  color: var(--color-blue);
+  font-size: var(--scale-base);
+  pointer-events: none;
+}
+
+.story-intro__sparkle--1 {
+  top: 8%;
+  left: 6%;
+}
+
+.story-intro__sparkle--2 {
+  top: 20%;
+  right: 6%;
+}
+
+@media (max-width: 480px) {
+  .story-intro__heading-line {
+    font-size: var(--scale-2xl);
+  }
+  .story-intro__sparkle {
+    display: none; /* cramped at small sizes, same call as vision__sparkle--3 */
+  }
+}
+.story-intro__text {
+  color: var(--color-ink);
+  font-weight: var(--weight-semibold);
+}
+
+.story-intro__text + .story-intro__text {
+  margin-top: var(--space-4);
+}
+
+.story {
+  padding-block: var(--space-16);
+  padding-inline: var(--page-x);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* ---------- Left: image placeholder ---------- */
+.story__visual {
+  background: var(--color-ink);
+  border-radius: var(--radius-xl);
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 580px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.story__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.story__visual-label {
+  color: var(--color-danger); /* stand-in pink for placeholder text */
+  font-family: var(--font-en);
+  font-weight: var(--weight-bold);
+  font-size: var(--scale-lg);
+  letter-spacing: var(--ls-en-label);
+  z-index: 1;
+}
+
+/* ---------- Right: story card ---------- */
+.story__card {
+  background: linear-gradient(173deg, #e6f1fd 5%, #ffffff 40%);
+  border-top: 12px solid var(--color-blue);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+  gap: var(--space-4);
+  max-width: 620px;
+  width: 100%;
+}
+
+.story__label {
+  color: var(--color-blue);
+  font-size: var(--scale-base);
+  letter-spacing: var(--ls-en-label);
+  font-weight: var(--weight-bold);
+}
+
+.story__text {
+  color: var(--color-ink);
+  max-width: 32ch;
+}
+
+.story__text strong {
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .story__grid {
+    grid-template-columns: 1fr;
+  }
+  .story__visual {
+    min-height: 240px;
+    max-width: 100%;
+  }
+  .story__card {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .story-intro {
+    padding-block: var(--space-10) var(--space-6);
+  }
+  .story__visual {
+    min-height: 200px;
+  }
+}
+
+.goals {
+  padding-block: var(--space-16);
+  padding-inline: var(--page-x);
+  text-align: center;
+}
+
+.goals__heading {
+  color: var(--color-ink-secondary);
+  margin-bottom: var(--space-12);
+}
+
+.goals__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+/* ---------- Card ---------- */
+.goals__card {
+  background: linear-gradient(173deg, #e6f1fd 5%, #ffffff 40%);
+  border-top: 12px solid var(--color-blue);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-10) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.goals__icon {
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.goals__icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+.goals__title {
+  margin: 0;
+  font-weight: var(--weight-semibold);
+}
+
+.goals__text {
+  color: var(--color-ink-secondary);
+  max-width: 28ch;
+}
+
+/* ---------- Accent colors per card ---------- */
+/* NOTE: purple/green/orange aren't in tokens.css yet.
+   Using one-off values here — worth promoting to tokens
+   if these accents get reused elsewhere on the site. */
+.goals__card--purple .goals__title {
+  color: #6c4bd6;
+}
+
+.goals__card--green .goals__title {
+  color: var(--color-success);
+}
+
+.goals__card--orange .goals__title {
+  color: var(--color-warning);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .goals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .goals {
+    padding-block: var(--space-10);
+  }
+  .goals__card {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+/* ==========================================================================
+   Vision Section
+   ========================================================================== */
+
+.vision {
+  position: relative;
+  overflow-x: clip;
+  padding-block: var(--space-64, 64px);
+}
+
+.vision__container {
+  max-width: var(--container-max, 1200px);
+  margin-inline: auto;
+  padding-inline: var(--space-24, 24px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: var(--space-40, 40px);
+}
+
+/* ---------- Content (left) ---------- */
+
+.vision__label {
+  display: block;
+  font-family: var(--font-en);
+  font-size: var(--scale-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  color: var(--color-muted, #728da0);
+  margin-bottom: var(--space-8, 8px);
+}
+
+.vision__heading {
+  margin: 0 0 var(--space-24, 24px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.vision__heading-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 12px);
+  justify-content: center;
+}
+
+.vision__heading-line {
+  display: block;
+  font-size: var(--scale-3xl);
+  font-weight: var(--weight-bold);
+}
+
+.vision__heading-line--solid {
+  color: #14529b;
+}
+
+.vision__heading-line--gradient {
+  background: linear-gradient(177deg, #005cd3 0%, #70a4d5 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.vision__bolt {
+  font-size: var(--scale-4xl);
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.vision__card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7efef 100%);
+  border-top: 4px solid var(--color-blue, #0156d7);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-24, 24px) var(--space-32, 32px);
+  max-width: 460px;
+  box-shadow: 0 8px 24px rgba(8, 38, 77, 0.08);
+}
+
+.vision__card-label {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--text-sm, 14px);
+  letter-spacing: 0.06em;
+  color: var(--color-blue, #0156d7);
+  margin-bottom: var(--space-8, 8px);
+}
+
+.vision__card-text {
+  text-align: center;
+  color: var(--color-ink, #08264d);
+  font-size: var(--text-base, 16px);
+}
+
+/* ---------- Visual (right) — 3-image grid ---------- */
+
+.vision__visual {
+  position: relative;
+}
+
+.vision__mascot {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.media-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.4fr;
+  gap: var(--space-16, 16px);
+  height: 480px;
+}
+
+.media-grid__item {
+  overflow: hidden;
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-surface-alt, #d9d9d9); /* placeholder gray */
+}
+
+.media-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-grid__item--top-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.media-grid__item--bottom-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.media-grid__item--right {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+/* Sparkles */
+
+.vision__sparkle {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.vision__sparkle--star::before {
+  content: "✦";
+  color: var(--color-blue, #0156d7);
+  font-size: 1rem;
+}
+
+.vision__sparkle--dot::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-blue, #0156d7) 50%, transparent);
+}
+
+.vision__sparkle--1 {
+  top: -4%;
+  right: 10%;
+}
+.vision__sparkle--2 {
+  bottom: 15%;
+  left: -3%;
+}
+.vision__sparkle--3 {
+  top: 40%;
+  right: -2%;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .vision__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: var(--space-16, 16px);
+  }
+  .vision__heading-row {
+    justify-content: center;
+  }
+  .vision__card {
+    margin-inline: auto;
+  }
+  .vision__visual {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .media-grid {
+    height: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .media-grid__item--top-left,
+  .media-grid__item--bottom-left,
+  .media-grid__item--right {
+    aspect-ratio: 4 / 3;
+  }
+  .media-grid__item--right {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .vision {
+    padding-block: var(--space-10, 40px);
+  }
+  .vision__mascot {
+    max-width: 280px;
+  }
+  .vision__card {
+    padding: var(--space-6, 16px) var(--space-6, 16px);
+  }
+  /* Decorative sparkles get cramped once the mascot is this small */
+  .vision__sparkle--3 {
+    display: none;
+  }
+}
+.page-canvas {
+  position: relative;
+  overflow: hidden; /* clip the circle at the page edges */
+}
+
+.page-canvas__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-canvas__arc {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.story-intro,
+.story,
+.vision,
+.goals {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}

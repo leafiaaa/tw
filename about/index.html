@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/fixed-en-web/" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <main class="page-canvas">
+      <div class="page-canvas__bg" aria-hidden="true">
+        <svg
+          class="page-canvas__arc"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="arcGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#F3F8FE" />
+              <stop offset="100%" stop-color="#D6EAFB" />
+            </linearGradient>
+          </defs>
+          <circle cx="650" cy="-480" r="1400" fill="url(#arcGradient)"></circle>
+        </svg>
+      </div>
+      <section class="story-intro">
+        <h1 class="story-intro__heading">
+          <span
+            class="story-intro__heading-line story-intro__heading-line--solid"
+            data-i18n="storyIntro.heading1"
+            >Meet xNinja,</span
+          >
+          <span
+            class="story-intro__heading-line story-intro__heading-line--gradient"
+            data-i18n="storyIntro.heading2"
+            >Your AI Workhub</span
+          >
+        </h1>
+
+        <span
+          class="story-intro__sparkle story-intro__sparkle--1"
+          aria-hidden="true"
+          >✦</span
+        >
+        <span
+          class="story-intro__sparkle story-intro__sparkle--2"
+          aria-hidden="true"
+          >✦</span
+        >
+        <p class="story-intro__text text-body-lg">
+          Through years of working with businesses across diverse industries, we
+          recognized that adopting new technology can often be complex,
+          time-consuming, and costly.
+        </p>
+        <p class="story-intro__text text-body-lg">
+          xNinja was designed to simplify this process, helping organizations
+          streamline operations, improve efficiency, and embrace a smarter way
+          of working.
+        </p>
+      </section>
+
+      <section class="story">
+        <div class="story__grid">
+          <!-- Left: Image placeholder -->
+          <div class="story__visual">
+            <img src="assets/images/story.webp" />
+          </div>
+
+          <!-- Right: Story card -->
+          <div class="story__card">
+            <p class="story__label text-label">Our Story</p>
+            <span class="story__text text-body-lg">
+              With over <strong>20 years of experience</strong> in the software
+              industry,
+              <a
+                href="https://www.hundredplus.com/portal/en/"
+                style="color: var(--color-blue)"
+                >Hundred Plus Co., Ltd. </a
+              >created xNinja AI Workhub to address the challenges organizations
+              face during digital transformation.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="vision">
+        <div class="vision__container">
+          <div class="vision__content">
+            <span class="vision__label" data-i18n="vision.label"
+              >OUR SLOGAN</span
+            >
+
+            <h2 class="vision__heading">
+              <span class="vision__heading-row">
+                <span
+                  class="vision__heading-line vision__heading-line--solid"
+                  data-i18n="vision.heading1"
+                  >Right</span
+                >
+                <span class="vision__bolt" aria-hidden="true">⚡</span>
+              </span>
+              <span
+                class="vision__heading-line vision__heading-line--gradient"
+                data-i18n="vision.heading2"
+                >When You Need It</span
+              >
+            </h2>
+
+            <div class="story__card">
+              <span class="story__label" data-i18n="vision.cardLabel"
+                >OUR VISION</span
+              >
+              <p class="vision__card-text" data-i18n="vision.cardText">
+                To deliver AI that empowers your team today and continues to
+                evolve for the future.
+              </p>
+            </div>
+          </div>
+
+          <div class="vision__visual">
+            <img
+              class="vision__mascot"
+              src="assets/images/flying_mascot.webp"
+              alt=""
+            />
+
+            <span
+              class="vision__sparkle vision__sparkle--star vision__sparkle--1"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="vision__sparkle vision__sparkle--star vision__sparkle--2"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="vision__sparkle vision__sparkle--star vision__sparkle--3"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="vision__sparkle vision__sparkle--dot vision__sparkle--4"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="vision__sparkle vision__sparkle--dot vision__sparkle--5"
+              aria-hidden="true"
+            ></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="goals">
+        <h2 class="vision__label text-h2">OUR GOALS</h2>
+
+        <div class="goals__grid">
+          <!-- Card 1 -->
+          <div class="goals__card goals__card--purple">
+            <div class="goals__icon" aria-hidden="true">
+              <img src="assets/images/fast_icon.webp" />
+            </div>
+            <h3 class="goals__title text-h4">
+              Simplify Digital Transformation
+            </h3>
+            <p class="goals__text text-body">
+              Start your digital journey faster with xNinja while reducing
+              complexity and costs.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="goals__card goals__card--green">
+            <div class="goals__icon" aria-hidden="true">
+              <img src="assets/images/buildings_icon.webp" />
+            </div>
+            <h3 class="goals__title text-h4">
+              Built for Businesses of All Sizes
+            </h3>
+            <p class="goals__text text-body">
+              From SMEs to enterprises, xNinja helps streamline operations and
+              improve productivity.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="goals__card goals__card--orange">
+            <div class="goals__icon" aria-hidden="true">
+              <img src="assets/images/levelUp_icon.webp" />
+            </div>
+            <h3 class="goals__title text-h4">Always Evolving</h3>
+            <p class="goals__text text-body">
+              xNinja continuously develops new skills to deliver greater value
+              to your organization.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+.articles_cta__intro{
+align-content:center;}
+
+.articles__media {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  min-height: 460px;
+  margin-inline: auto;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===== badge/date meta row (Image 1 reference) ===== */
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 var(--space-2);
+}
+.card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: var(--color-blue);
+  color: var(--color-surface);
+  font-family: var(--font-en);
+  font-weight: var(--weight-semibold);
+  font-size: var(--scale-xs);
+}
+.card__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-ink-secondary);
+}
+.card__date {
+  font-size: var(--scale-xs);
+  color: var(--color-ink-secondary);
+}
+
+/* ===== fanned card stack ===== */
+.top__card {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 300px;
+  border-top: 12px solid var(--color-blue-card-light);
+}
+
+.bottom__card {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  max-width: 260px;
+  min-height:200px;
+  max-height:200px;
+  filter: blur(1.5px); 
+}
+.bottom__card__left {
+  left: 0;
+  z-index: 10;
+  border-top: 12px solid var(--color-blue-card);
+}
+.bottom__card__right {
+  right: 0;
+  z-index: 8;
+  border-top: 12px solid var(--color-blue-card-dark);
+}
+
+@media (max-width: 720px) {
+  .bottom__card {
+    display: none; /* mirrors how .hero__curve is hidden on small viewports */
+  }
+  .articles__media {
+    min-height: auto;
+    max-width: 320px;
+  }
+  .top__card {
+    position: static;
+    transform: none;
+    margin-inline: auto;
+  }
+}
