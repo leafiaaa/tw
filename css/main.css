@@ -40,7 +40,7 @@ section {
 .main__title {
   font-family: var(--font-en), var(--font-tw);
   font-weight: var(--weight-semibold);
-  font-size: var(--scale-3xl);
+  font-size: var(--scale-2xl);
   color: var(--color-ink);
   text-align: left;
 }
