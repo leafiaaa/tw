@@ -188,6 +188,12 @@ document.querySelectorAll('.toc a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const target = document.getElementById(link.getAttribute("href").slice(1));
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!target) return;
+    const navbarEl = document.querySelector(
+      "#navbar-placeholder",
+    ).firstElementChild;
+    const offset = navbar ? navbar.offsetHeight : 0;
+    const y = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
   });
 });
