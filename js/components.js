@@ -2,15 +2,18 @@
   // ── 1. Fetch and inject navbar ──────────────────────────────
   const placeholder = document.getElementById("navbar-placeholder");
   if (!placeholder) return;
-fetch("components/navbar.html", { cache: "no-store" })
-  .then((res) => res.text())
-  .then((html) => {
-    // Strip live-server's injected reload script from fetched partials
-    html = html.replace(/<!-- Code injected by live-server -->[\s\S]*?<\/script>/g, "");
-    placeholder.innerHTML = html;
-    initNavbar();
-  })
-  .catch((err) => console.error("Navbar load failed:", err));
+  fetch("components/navbar.html", { cache: "no-store" })
+    .then((res) => res.text())
+    .then((html) => {
+      // Strip live-server's injected reload script from fetched partials
+      html = html.replace(
+        /<!-- Code injected by live-server -->[\s\S]*?<\/script>/g,
+        "",
+      );
+      placeholder.innerHTML = html;
+      initNavbar();
+    })
+    .catch((err) => console.error("Navbar load failed:", err));
 
   // ── 1b. Fetch and inject footer ────────────────────────────
   const footerPlaceholder = document.getElementById("footer-placeholder");
@@ -29,7 +32,7 @@ fetch("components/navbar.html", { cache: "no-store" })
     initHamburger();
     highlightActiveLink();
     initScrollFrost();
-    initMegaMenu(); 
+    initMegaMenu();
   }
 
   // Frost navbar on scroll
@@ -133,8 +136,6 @@ fetch("components/navbar.html", { cache: "no-store" })
     });
   }
 
-
-
   // Highlight active nav link
   function highlightActiveLink() {
     const links = document.querySelectorAll(
@@ -151,33 +152,42 @@ fetch("components/navbar.html", { cache: "no-store" })
 })();
 function toggleSubMenu(button) {
   if (!button) return;
-  
+
   // 1. Find the parent <li> that wraps this entire drawer item
-  const parentContainer = button.closest('li');
-  console.log(parentContainer?.outerHTML); 
+  const parentContainer = button.closest("li");
+  console.log(parentContainer?.outerHTML);
   if (!parentContainer) return; // Safety check
 
   // 2. Find the submenu inside that specific parent container
-  const targetMenu = parentContainer.querySelector('.drawer__submenu');
-  
+  const targetMenu = parentContainer.querySelector(".drawer__submenu");
+
   // 3. Toggle the grid animation classes
   if (targetMenu) {
-    targetMenu.classList.toggle('show');
+    targetMenu.classList.toggle("show");
   } else {
-    console.error("Still can't find the menu! Check that the ul has the class 'drawer__submenu'");
+    console.error(
+      "Still can't find the menu! Check that the ul has the class 'drawer__submenu'",
+    );
   }
-  
+
   // 4. Toggle the arrow rotation
-  button.classList.toggle('rotate');
+  button.classList.toggle("rotate");
 }
 
 // ── 1c. Fetch and inject CTA ───────────────────────────────
-  const ctaPlaceholder = document.getElementById("cta-placeholder");
-  if (ctaPlaceholder) {
-    fetch("components/cta.html")
-      .then((res) => res.text())
-      .then((html) => {
-        ctaPlaceholder.innerHTML = html;
-      })
-      .catch((err) => console.error("CTA load failed:", err));
-  }
+const ctaPlaceholder = document.getElementById("cta-placeholder");
+if (ctaPlaceholder) {
+  fetch("components/cta.html")
+    .then((res) => res.text())
+    .then((html) => {
+      ctaPlaceholder.innerHTML = html;
+    })
+    .catch((err) => console.error("CTA load failed:", err));
+}
+document.querySelectorAll('.toc a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.getAttribute("href").slice(1));
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
